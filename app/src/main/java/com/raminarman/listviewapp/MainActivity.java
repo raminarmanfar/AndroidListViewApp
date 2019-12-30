@@ -1,8 +1,12 @@
 package com.raminarman.listviewapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +22,27 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     private Spinner spinner;
     private ListView listView;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.moreMenuItem:
+                Toast.makeText(this, "You tapped on the more menu item.", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.settingsMenuItem:
+                Toast.makeText(this, "You tapped on the settings menu item.", Toast.LENGTH_LONG).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
