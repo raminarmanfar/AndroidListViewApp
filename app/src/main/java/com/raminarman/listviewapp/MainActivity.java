@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.txtTitle);
         textView.setText(getString(R.string.welcome_text));
+
         spinner = findViewById(R.id.spinner);
         listView = findViewById(R.id.listView);
 
